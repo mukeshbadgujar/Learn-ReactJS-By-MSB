@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import  Card  from "./Cards";
+import Sdata  from "./Sdata";
+import Netflix from './Netflix';
+import Amazon from './Amazon';
+/*function ncard(val) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card
+        imgsrc={val.imgsrc}
+        title={val.title}
+        sname={val.sname}
+        link={val.link}
+      />
   );
+
+
+  <Card
+              key={val.id}
+              imgsrc={val.imgsrc}
+              title={val.title}
+              sname={val.sname}
+              link={val.link}
+        />
+}*/
+const favSer = "netflix";
+
+const Favs=() =>{
+  if (favSer === "netflix"){
+    return <Netflix/>
+  }else{
+    return <Amazon/>
+  }
 }
+const App = () =>(
+    <React.StrictMode>
+      <Favs/>
+
+
+    </React.StrictMode>
+);
 
 export default App;
