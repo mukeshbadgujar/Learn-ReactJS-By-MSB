@@ -1,8 +1,9 @@
-import React from 'react';
-import  Card  from "./Cards";
-import Sdata  from "./Sdata";
-import Netflix from './Netflix';
-import Amazon from './Amazon';
+import React from "react";
+import Netflix from "./Netflix";
+import Amazon from "./Amazon";
+import SlotMachine from "./SlotMachine";
+import CounterIncUseState from "./CounterIncUseState";
+import InputName from "./InputName";
 /*function ncard(val) {
   return (
     <Card
@@ -24,19 +25,34 @@ import Amazon from './Amazon';
 }*/
 const favSer = "netflix";
 
-const Favs=() =>{
+/*const Favs=() =>{
   if (favSer === "netflix"){
     return <Netflix/>
   }else{
     return <Amazon/>
   }
-}
-const App = () =>(
-    <React.StrictMode>
-      <Favs/>
+}*/
 
-
-    </React.StrictMode>
+const App = () => (
+  <React.StrictMode>
+    {/*<Favs/>*/} {favSer === "netflix" ? <Netflix /> : <Amazon />}
+    <div>
+      <h1 className="text-center">
+        🎰 Welcome To
+        <span style={{ fontWeight: "bolder" }}> Slot machine Game</span>
+        🎰
+      </h1>
+      <SlotMachine x="😃" y="😃" z="😃" />
+      <SlotMachine x="😆" y="😃" z="😃" />
+      <SlotMachine x="😃" y="😃" z="😃" />
+    </div>
+    <div>
+      <CounterIncUseState />
+    </div>
+    <div>
+      <InputName />
+    </div>
+  </React.StrictMode>
 );
 
 export default App;
