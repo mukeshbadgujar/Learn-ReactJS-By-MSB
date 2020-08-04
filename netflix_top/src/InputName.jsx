@@ -13,7 +13,8 @@ const InputName = () => {
     setLName(e.target.value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     setFullName(name);
     setFullLName(lname);
   };
@@ -25,9 +26,11 @@ const InputName = () => {
       </h1>
       <h1>Name Update: {name} </h1>
       <h1>Name L Update: {lname} </h1>
-      <input type="text" onChange={InputEvent} value={name} />
-      <input type="text" onChange={InputEvent2} value={lname} />
-      <button onClick={onSubmit}>Click</button>
+      <form onSubmit={onSubmit}>
+        <input type="text" onChange={InputEvent} value={name} />
+        <input type="text" onChange={InputEvent2} value={lname} />
+        <button type="submit">Click</button>
+      </form>
     </React.Fragment>
   );
 };
