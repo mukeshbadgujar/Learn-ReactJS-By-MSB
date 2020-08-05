@@ -4,6 +4,7 @@ import Amazon from "./Amazon";
 import SlotMachine from "./SlotMachine";
 import CounterIncUseState from "./CounterIncUseState";
 import InputName from "./InputName";
+import MultipleFormInput from "./MultipleFormInput";
 /*function ncard(val) {
   return (
     <Card
@@ -51,6 +52,9 @@ const App = () => (
     </div>
     <div>
       <InputName />
+    </div>
+    <div>
+      <MultipleFormInput />
     </div>
   </React.StrictMode>
 );
